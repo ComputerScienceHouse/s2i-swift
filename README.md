@@ -2,6 +2,10 @@
 
 This repository contains the source for building Swift applications as reproducible Docker images using source-to-image. The resulting image can be run using Docker.
 
+## Source Repository Expectations
+
+This image expects that you have a `run.sh` file in the root directory of your repository that handles all tasks necessary for setting up and running your compiled app.
+
 ## Installation
 
 This image is available on DockerHub. To pull it, run:
