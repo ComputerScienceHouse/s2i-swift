@@ -1,5 +1,5 @@
 # swift-ubuntu16.04
-FROM computersciencehouse/base-ubuntu16.04
+FROM computersciencehouse/s2i-base-ubuntu:16.04
 
 # Put the maintainer name in the image metadata
 MAINTAINER Steven Mirabito <smirabito@csh.rit.edu>
