@@ -1,0 +1,20 @@
+#!/bin/bash -e
+#
+# S2I assemble script for the 'swift-ubuntu16.04' image.
+# The 'assemble' script builds your application source so that it is ready to run.
+#
+# For more information refer to the documentation:
+#	https://github.com/openshift/source-to-image/blob/master/docs/builder_image.md
+#
+
+if [[ "$1" == "-h" ]]; then
+	# If the 'swift-ubuntu16.04' assemble script is executed with '-h' flag,
+	# print the usage.
+	exec /usr/libexec/s2i/usage
+fi
+
+echo "---> Installing application source..."
+cp -Rf /tmp/src/. ./
+
+echo "---> Building application..."
+/opt/swift/swift-3.0/usr/bin/swift build -c release

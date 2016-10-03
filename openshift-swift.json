@@ -1,0 +1,25 @@
+{
+  "kind": "ImageStream",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "swift"
+  },
+  "spec": {
+    "tags": [
+      {
+        "name": "latest",
+        "annotations": {
+          "description": "Build and run Swift applications",
+          "iconClass": "fa fa-apple",
+          "tags": "builder,swift",
+          "supports": "swift:3.0,swift",
+          "version": "3.0"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "computersciencehouse/swift-ubuntu16.04:latest"
+        }
+      }
+    ]
+  }
+}
