@@ -30,10 +30,8 @@ COPY ./.s2i/bin/ /usr/libexec/s2i
 RUN mkdir -p /bin && \
 ln -s /usr/bin/env /bin/env
 
-# Drop the root user and make the content of /opt/app-root owned by user 1001
-RUN chown -R 1001:1001 /opt/app-root
-
-# This default user is created in the base image
+# Chown /opt/app-root to the deployment user and drop privileges
+RUN chown -R 1001:0 /opt/app-root && chmod -R og+rwx /opt/app-root
 USER 1001
 
 # Set the default port for applications built using this image
